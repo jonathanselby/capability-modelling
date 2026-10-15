@@ -12,23 +12,27 @@ Do not start with the org chart, application inventory or current process catalo
 
 Ask what the organisation must be able to do for those outcomes to remain possible.
 
-Phrase candidates as business abilities, usually noun-based concepts such as:
+Phrase candidates as business abilities. The naming convention matters less than the semantic test: the label should describe an enduring ability rather than today's implementation.
 
-- Customer Management
-- Demand Management
-- Fulfilment Management
-- Revenue Management
-- Supplier Management
+## 3. Establish modelling levels before filling them
 
-The naming convention matters less than the semantic test: the label should describe an enduring ability rather than today's implementation.
+For this method:
 
-## 3. Define boundaries
+- **L1** = enterprise-scale enduring abilities covering major business responsibilities;
+- **L2** = narrower enduring abilities that decompose one L1;
+- **process/task detail** = activities performed to realise a capability and therefore modelled separately.
+
+A model containing `Customer Management`, `Send Renewal Email` and `Enterprise Operations` at one level is not merely untidy; it mixes semantic scales.
+
+Do not use a fixed box count as the definition of granularity. Compare what each sibling means.
+
+## 4. Define boundaries
 
 For each candidate, write a short definition plus what is explicitly inside and outside scope.
 
 If two candidates cannot be distinguished without naming teams or systems, the capability boundaries are probably not yet clear.
 
-## 4. Test for implementation leakage
+## 5. Test for implementation leakage
 
 Challenge every candidate:
 
@@ -38,18 +42,25 @@ Challenge every candidate:
 - Is this a location?
 - Is this a workflow step?
 - Is this a programme or temporary initiative?
+- Is this merely an asset/facility class?
 
-If yes, identify the enduring ability underneath it.
+If yes, identify the enduring ability underneath it or map the item separately later.
 
-## 5. Test granularity
+## 6. Test sibling granularity
 
-Sibling capabilities should be comparable enough to support meaningful analysis.
+For every group of siblings ask:
 
-A model containing `Customer Management`, `Send Renewal Email`, and `Enterprise Operations` at the same level mixes materially different scales.
+> Do these labels describe enduring abilities at a comparable business scale?
 
-Fix this by combining, splitting or moving capabilities between levels.
+Use three checks:
 
-## 6. Test stability under change
+1. **Substitution test** — would one sibling reasonably contain another? If yes, levels may be mixed.
+2. **Task test** — can a sibling be completed in one workflow step or work instruction? If yes, it is probably process detail.
+3. **Implementation test** — is a sibling mainly a system, asset, team, channel or site? If yes, remove it from capability identity.
+
+Fix mismatches by `COMBINE`, `SPLIT`, `MOVE LEVEL`, `REVISE` or `REMOVE`.
+
+## 7. Test stability under change
 
 Run four thought experiments:
 
@@ -60,19 +71,34 @@ Run four thought experiments:
 
 The capability should still make sense.
 
-## 7. Review completeness without chasing perfection
+## 8. Review completeness without chasing symmetry
 
 Ask whether the model covers the major abilities required to deliver the organisation's purpose and obligations.
 
-Do not force artificial completeness. Record uncertainty and missing evidence rather than inventing capabilities to fill visual gaps.
+Do not invent capabilities to fill visual gaps or force every L1 to have the same number of children.
 
-## 8. Map implementation separately
+Record uncertainty and missing evidence.
+
+## 9. Cross-check against another domain or model where useful
+
+A model can look internally tidy while operating at the wrong scale.
+
+When building a reusable method or reference example, compare it with another model:
+
+- are L1s enterprise abilities in both?
+- are L2s true decompositions rather than tasks?
+- are systems/teams/assets kept out consistently?
+- is one model dramatically more detailed without an evidence reason?
+
+This is a scale check, not a demand for identical taxonomies.
+
+## 10. Map implementation separately
 
 Only after the capability model is reasonably stable should teams, systems, processes, vendors, data, controls and change initiatives be mapped to it.
 
 This creates a stable business view with changeable implementation views around it.
 
-## 9. Keep it useful
+## 11. Keep it useful
 
 A capability model is useful when it helps answer questions such as:
 

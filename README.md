@@ -6,7 +6,7 @@ A business capability model should describe **what an organisation must be able 
 
 That sounds simple. In practice, capability maps frequently become disguised org charts, application inventories, process diagrams or transformation plans.
 
-This repository contains a lightweight method, quality tests, fictional examples and an AI-assisted modelling skill for keeping capability models useful.
+This repository contains a lightweight method, quality tests, worked examples and an AI-assisted modelling skill for keeping capability models useful.
 
 ## The core test
 
@@ -47,13 +47,11 @@ A proposed capability is suspect when it is primarily:
 - a workflow step;
 - a temporary transformation activity.
 
-Other warning signs include capabilities that are so broad they mean almost nothing, sibling capabilities at wildly different levels of granularity, and definitions that simply repeat the capability name.
+Other warning signs include capabilities that are so broad they mean almost nothing, sibling capabilities at materially different semantic scales, and definitions that simply repeat the capability name.
 
 See [`anti-patterns/README.md`](anti-patterns/README.md).
 
 ## The method
-
-The method is deliberately small:
 
 ```text
 BUSINESS PURPOSE / OUTCOMES
@@ -68,6 +66,9 @@ BUSINESS PURPOSE / OUTCOMES
 QUALITY + ANTI-PATTERN TESTS
            |
            v
+GRANULARITY CROSS-CHECK
+           |
+           v
    REVISE / ACCEPT
            |
            v
@@ -78,6 +79,20 @@ The order matters. Starting from the current org chart or application estate usu
 
 See [`METHOD.md`](METHOD.md).
 
+## Granularity
+
+Granularity is semantic, not a box-count target.
+
+For the worked examples:
+
+- **L1** means an enterprise-scale enduring ability;
+- **L2** means a narrower enduring ability that decomposes one L1;
+- workflow steps, tasks, screens, teams, systems, facilities and projects stay outside the capability hierarchy.
+
+The example set deliberately holds L1 models to roughly 8–12 capabilities and selected L2 decompositions to 3–5 siblings so the examples can be compared at the same scale. **Those numbers are not a modelling rule.**
+
+See [`examples/granularity-cross-check.md`](examples/granularity-cross-check.md).
+
 ## Quality tests
 
 A proposed capability should pass six questions:
@@ -86,14 +101,12 @@ A proposed capability should pass six questions:
 2. **Implementation-independent** — can teams, systems and processes change without renaming it?
 3. **Business-meaningful** — does it describe an ability the organisation actually needs?
 4. **Clear boundary** — can a reader tell what belongs inside and outside it?
-5. **Comparable granularity** — is it at roughly the same level as its siblings?
+5. **Comparable granularity** — is it at roughly the same semantic scale as its siblings?
 6. **Useful definition** — does the definition explain the ability rather than restating the name?
 
 The full checklist is in [`checklists/capability-quality.md`](checklists/capability-quality.md).
 
 ## Capability definition template
-
-A capability definition should be short enough to review but rich enough to stop the name carrying all of the meaning.
 
 ```text
 Name
@@ -112,32 +125,32 @@ The template deliberately does **not** require owner, team, application, process
 
 See [`templates/capability-definition.md`](templates/capability-definition.md).
 
-## Worked example
+## Worked examples
 
-The fictional **Northstar Equipment Hire** example begins with a plausible but poor first draft containing team names, systems, processes and programmes.
+V0.2 uses the same evidence principle as [`codebase-to-edd`](https://github.com/jonathanselby/codebase-to-edd): do not publish only the polished answer; make the evidence basis, rejected interpretations, uncertainty and review recoverable.
 
-It then rebuilds the model around enduring abilities such as:
+Three examples are included:
+
+| Example | Evidence basis | Purpose |
+|---|---|---|
+| [`Northstar Equipment Hire`](examples/fictional-company/) | fictional source brief | show the method without external evidence dependencies |
+| [`Australia Post`](examples/australia-post/) | dated official public sources | large national logistics, retail-access and service network |
+| [`Sydney Water`](examples/sydney-water/) | dated official public sources | regulated infrastructure utility |
+
+Every worked example contains:
 
 ```text
-Customer Management
-Fleet Management
-Equipment Availability Management
-Rental Agreement Management
-Fulfilment Management
-Maintenance Management
-Revenue Management
-Supplier Management
-Workforce Management
-Enterprise Management
+README
+  -> evidence
+  -> bad first draft
+  -> corrected model
+  -> scoped capability definitions
+  -> review
 ```
 
-The point is not that these names form a universal equipment-hire taxonomy. They demonstrate the method and make the corrections inspectable.
+The public-source models are architectural inference, **not official capability models** of those organisations.
 
-Start with:
-
-- [`examples/fictional-company/bad-first-draft.md`](examples/fictional-company/bad-first-draft.md)
-- [`examples/fictional-company/corrected-model.md`](examples/fictional-company/corrected-model.md)
-- [`examples/fictional-company/capability-definitions.md`](examples/fictional-company/capability-definitions.md)
+See [`examples/README.md`](examples/README.md).
 
 ## AI-assisted modelling
 
@@ -147,27 +160,17 @@ The important boundary is:
 
 > **The model proposes. The architect accepts, rejects, combines, splits and renames.**
 
-The skill requires the model to:
-
-- derive candidate capabilities from business purpose and responsibilities rather than copying nouns blindly;
-- flag unsupported assumptions;
-- run its own proposal through the anti-pattern tests;
-- identify likely org-chart, system, process, programme and vendor leakage;
-- identify inconsistent granularity;
-- state what evidence is missing;
-- avoid presenting a generated taxonomy as authoritative.
+The skill requires the model to expose evidence, assumptions, anti-pattern leakage, granularity problems, missing evidence and boundary questions before anything is accepted.
 
 ## Tests
 
-[`tests/quality-cases.md`](tests/quality-cases.md) contains small pass/fail cases for the method.
+[`tests/quality-cases.md`](tests/quality-cases.md) contains semantic pass/fail/ambiguous cases.
 
-The tests are semantic, not automated. That is deliberate. A capability called `Customer Account Management` may be sound in one context and badly scoped in another. A deterministic name checker cannot establish business meaning.
+The tests are not automated because terminology alone cannot establish business meaning. A label such as `Customer Account Management` may be a sound capability, a team name or a process label depending on context.
 
 ## What comes after the capability model
 
 A capability model becomes more useful when other views are mapped **to it** rather than embedded **inside it**.
-
-Useful mappings can include:
 
 ```text
 CAPABILITY
@@ -209,19 +212,15 @@ capability-modelling/
 ├── CHANGELOG.md
 ├── LICENSE
 ├── templates/
-│   └── capability-definition.md
 ├── checklists/
-│   └── capability-quality.md
 ├── anti-patterns/
-│   └── README.md
 ├── tests/
-│   └── quality-cases.md
 └── examples/
-    └── fictional-company/
-        ├── README.md
-        ├── bad-first-draft.md
-        ├── corrected-model.md
-        └── capability-definitions.md
+    ├── README.md
+    ├── granularity-cross-check.md
+    ├── fictional-company/
+    ├── australia-post/
+    └── sydney-water/
 ```
 
 ## Licence

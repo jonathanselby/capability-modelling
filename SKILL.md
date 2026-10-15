@@ -2,7 +2,7 @@
 
 ## Objective
 
-Propose a candidate business capability model from supplied organisational evidence while keeping capability identity separate from org structure, applications, processes, vendors, locations and temporary change programmes.
+Propose a candidate business capability model from supplied organisational evidence while keeping capability identity separate from org structure, applications, processes, vendors, locations, assets/facilities and temporary change programmes.
 
 The output is a **candidate model for architectural review**, not an authoritative taxonomy.
 
@@ -17,6 +17,16 @@ Do not silently fill gaps with generic industry knowledge. When a capability is 
 A capability is an enduring organisational ability required to produce a business outcome or fulfil a business responsibility.
 
 It describes **what must be possible**, not who performs it or how it is currently implemented.
+
+## Modelling levels
+
+Use levels semantically:
+
+- **L1** — enterprise-scale enduring ability;
+- **L2** — narrower enduring ability that decomposes one L1;
+- **process/task** — activities/workflow detail; do not place these in the capability hierarchy.
+
+Do not infer that L1 must contain a fixed number of capabilities or every L1 must have the same number of L2s.
 
 ## Workflow
 
@@ -42,13 +52,14 @@ Separate relevant evidence into:
 - vendors/products;
 - processes/activities;
 - locations;
+- assets/facilities;
 - programmes/change initiatives.
 
-The latter categories may help reveal underlying abilities, but must not be copied into the capability model by default.
+Implementation categories may reveal underlying abilities but must not be copied into the capability model by default.
 
-### 3. Propose candidate capabilities
+### 3. Propose L1 candidate capabilities
 
-Derive enduring abilities needed to deliver the evidenced outcomes and responsibilities.
+Derive enterprise-scale enduring abilities needed to deliver evidenced outcomes and responsibilities.
 
 For each candidate provide:
 
@@ -57,13 +68,11 @@ For each candidate provide:
 - evidence basis;
 - confidence: `supported`, `inferred`, or `needs evidence`.
 
-### 4. Build a simple hierarchy
+### 4. Add L2 only where it improves meaning
 
-Group capabilities only where hierarchy adds clarity.
+Decompose an L1 only into narrower enduring abilities.
 
-Do not create levels merely to make the diagram symmetrical.
-
-Keep sibling granularity reasonably comparable.
+Do not use process steps as L2s. Do not create L2 merely for visual symmetry.
 
 ### 5. Run anti-pattern review
 
@@ -75,13 +84,25 @@ Explicitly test every candidate for:
 - process-step leakage;
 - programme/change leakage;
 - location leakage;
+- asset/facility leakage;
 - outcome-as-capability;
 - object-without-ability;
 - excessive breadth;
 - inconsistent granularity;
 - tautological definition.
 
-### 6. Run stability tests
+### 6. Run sibling granularity review
+
+For each sibling set test:
+
+- would one candidate naturally contain another?
+- is one candidate a single task while peers are broad abilities?
+- is one candidate primarily implementation rather than business ability?
+- is one candidate materially broader or narrower without evidence-based reason?
+
+Use review actions: `ACCEPT`, `REVISE`, `COMBINE`, `SPLIT`, `MOVE LEVEL`, `REMOVE`, `NEEDS EVIDENCE`.
+
+### 7. Run stability tests
 
 For each material candidate ask whether it should survive:
 
@@ -92,7 +113,7 @@ For each material candidate ask whether it should survive:
 
 Flag candidates that fail.
 
-### 7. Report uncertainty
+### 8. Report uncertainty
 
 List:
 
@@ -110,7 +131,9 @@ List:
 
 ## Business purpose / outcomes
 
-## Proposed capability hierarchy
+## Proposed L1 capability hierarchy
+
+## Selected L2 decompositions
 
 ## Capability definitions
 | Capability | Definition | Evidence basis | Confidence |
@@ -118,7 +141,9 @@ List:
 ## Anti-pattern findings
 | Candidate | Finding | Action |
 
-## Granularity / boundary issues
+## Granularity cross-check
+
+## Boundary issues
 
 ## Assumptions and inferred capabilities
 
@@ -127,31 +152,18 @@ List:
 ## Review summary
 ```
 
-## Review actions
-
-Use only these review actions where practical:
-
-```text
-ACCEPT
-REVISE
-COMBINE
-SPLIT
-MOVE LEVEL
-REMOVE
-NEEDS EVIDENCE
-```
-
 ## Things not to do
 
 Do not:
 
 - present an AI-generated taxonomy as authoritative;
 - assume common industry capabilities are present without evidence;
-- copy team or system names into the model merely because they appear frequently;
+- copy team, system, site, product or asset names into the model merely because they appear frequently;
 - optimise for a fixed number of capability boxes;
 - force every business object into a `... Management` capability;
 - create symmetry by invention;
 - hide ambiguity behind confident wording;
+- use process steps as L2 capabilities;
 - score maturity unless explicitly asked and evidence exists;
 - map applications, teams or processes into capability identity.
 
