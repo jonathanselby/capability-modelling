@@ -1,128 +1,85 @@
-# Semantic Quality Cases
+# Capability Quality Cases
 
-These cases are review tests for the method. They are deliberately small and contextual rather than automated.
+These are semantic review cases, not automated unit tests.
 
 ## Case 1 — application name
 
-**Candidate:** `Salesforce`
+Candidate: `Salesforce`
 
-**Expected:** reject.
-
-**Why:** product/application, not an enduring business ability.
-
-**Possible underlying capabilities:** Customer Management, Opportunity Management, Customer Interaction Management — subject to business evidence.
-
----
+**Expected:** REMOVE as capability. Map the application later to capabilities it enables.
 
 ## Case 2 — team name
 
-**Candidate:** `Fleet Operations Team`
+Candidate: `Sydney Sales`
 
-**Expected:** revise.
+**Expected:** REMOVE or REVISE. Geography and current organisation structure should not define the capability.
 
-**Why:** organisation structure.
+## Case 3 — broad enduring ability
 
-**Possible capability:** Fleet Management or Fleet Operations, depending on scope and evidence.
+Candidate: `Customer Management`
 
----
+**Expected:** plausible L1 where the scope is enterprise-wide customer capability.
 
-## Case 3 — workflow step
+## Case 4 — meaningful L2
 
-**Candidate:** `Approve Rental Extension`
+Parent: `Customer Management`  
+Candidate child: `Customer Relationship Management`
 
-**Expected:** remove as peer capability or place under a broader capability.
+**Expected:** plausible L2 if it describes an enduring subset of the parent and is distinct from sibling abilities such as Customer Service Management.
 
-**Why:** activity/process step.
+## Case 5 — elemental L3
 
-**Possible parent ability:** Rental Agreement Management.
+Parent: `Customer Relationship Management`  
+Candidate child: `Customer Preference Management`
 
----
+**Expected:** plausible L3 if customer preferences are a materially distinct business responsibility with separate information, controls or system support.
 
-## Case 4 — temporary programme
+## Case 6 — process step masquerading as L3
 
-**Candidate:** `Digital Customer Programme`
+Parent: `Rental Agreement Management`  
+Candidate child: `Send Contract Email`
 
-**Expected:** reject.
+**Expected:** REMOVE from capability hierarchy. This is activity/task detail.
 
-**Why:** temporary change initiative.
+## Case 7 — programme
 
-**Question:** which enduring customer abilities is the programme changing?
+Candidate: `ERP Replacement`
 
----
+**Expected:** REMOVE as capability. Map the programme to impacted capabilities.
 
-## Case 5 — enduring ability
+## Case 8 — sibling mismatch
 
-**Candidate:** `Supplier Management`
+```text
+Customer Management
+Send Renewal Email
+Enterprise Management
+```
 
-**Definition:** The ability to establish, govern and maintain supplier relationships so external goods and services meet business, commercial and operational requirements.
+**Expected:** FAIL granularity review. These labels operate at materially different scales.
 
-**Expected:** likely accept, subject to model scope.
+## Case 9 — parent/child mismatch
 
-**Why:** enduring, implementation-independent and business-meaningful.
+```text
+Customer Management
+└── Finance Management
+```
 
----
+**Expected:** FAIL vertical review. The child does not decompose the parent.
 
-## Case 6 — weak definition
+## Case 10 — ambiguous terminology
 
-**Candidate:** `Contract Management`
+Candidate: `Customer Account Management`
 
-**Definition:** The ability to manage contracts.
+**Expected:** NEEDS EVIDENCE. The label could describe an enduring capability, a team or a process depending on context.
 
-**Expected:** revise definition.
+## Case 11 — small organisation stopping at L2
 
-**Why:** tautology; does not establish purpose or boundary.
+A ten-person professional-services firm has `Client Management -> Client Relationship Management`, with one owner, one CRM, one policy set and no material lower-level distinctions.
 
----
+**Expected:** ACCEPT stopping at L2. L3 would likely add maintenance without decision value.
 
-## Case 7 — mixed granularity
+## Case 12 — large enterprise needs L3
 
-**Sibling candidates:**
+A national utility has `Asset Management -> Asset Lifecycle Management`, but acquisition, maintenance strategy, renewal and disposal have different systems, governance, investment pools and controls.
 
-- Customer Management
-- Send Welcome Email
-- Revenue Management
-- Enterprise Management
-
-**Expected:** revise hierarchy/granularity.
-
-**Why:** one process step and one very broad umbrella sit beside domain-level capabilities.
-
----
-
-## Case 8 — location
-
-**Candidate:** `Sydney Fulfilment`
-
-**Expected:** revise.
-
-**Why:** the location can change independently of the business ability.
-
-**Possible capability:** Fulfilment Management, with Sydney mapped as an operating location.
-
----
-
-## Case 9 — ambiguous but potentially valid
-
-**Candidate:** `Customer Account Management`
-
-**Expected:** needs context.
-
-**Why:** it may be a genuine enduring ability, a team name, or a sales process depending on the organisation.
-
-**Required action:** define purpose, scope and boundaries before accepting.
-
----
-
-## Case 10 — AI inference without evidence
-
-**Input evidence:** company rents equipment and performs maintenance.
-
-**Generated candidate:** `Loyalty Programme Management`
-
-**Expected:** mark as unsupported / needs evidence.
-
-**Why:** plausible industry knowledge is not evidence that this organisation requires or performs the capability.
-
-## Completion test
-
-A reviewer using this method should be able to explain not only whether each candidate passes, but **why** it passes or fails and what architectural view the failed item actually belongs to.
+**Expected:** SPLIT to L3. The L2 label hides distinctions that matter architecturally.

@@ -1,78 +1,97 @@
 # Granularity Cross-Check
 
-The examples use different industries but should demonstrate the method at comparable architectural scales.
+This file exists to stop the worked examples drifting to different semantic scales.
 
-## Cross-example control
+## Common hierarchy
+
+```text
+LANDSCAPE GROUPING   navigation only
+└── L1               broad enterprise ability
+    └── L2           major enduring decomposition
+        └── L3       elemental enduring business ability
+```
+
+## Cross-example comparison
 
 | Level | Northstar Equipment Hire | Australia Post | Sydney Water |
 |---|---|---|---|
-| L1 scale | enterprise-wide enduring ability | enterprise-wide enduring ability | enterprise-wide enduring ability |
-| L1 count | 10 | 12 | 12 |
-| selected L2 pattern | 3 parents × 4 children | 3 parents × 4 children | 3 parents × 4 children |
-| L2 scale | enduring decomposition of one L1 | enduring decomposition of one L1 | enduring decomposition of one L1 |
-| process steps at L1/L2? | no | no | no |
-| systems/vendors at L1/L2? | no | no | no |
-| teams/locations at L1/L2? | no | no | no |
+| grouping | Operations & Assets | Network & Fulfilment | Assets & Infrastructure |
+| L1 | Maintenance Management | Network Management | Asset Management |
+| L2 | Maintenance Planning | Network Capacity Management | Asset Lifecycle Management |
+| L3 | Preventive Maintenance Planning | Capacity Forecasting | Asset Renewal Management |
 
-The counts are an **example-design control**, not a modelling rule. A real organisation may legitimately require a different number of capabilities.
+These labels are domain-specific, but the semantic scale is intended to be comparable.
 
-## Comparable L1 examples
+## Horizontal test
+
+At any one parent, siblings should be peers.
+
+Good:
 
 ```text
-Northstar          Australia Post            Sydney Water
----------          --------------            ------------
-Customer Mgmt      Customer Mgmt             Customer Mgmt
-Fleet Mgmt         Transport Network Mgmt    Network & Asset Mgmt
-Fulfilment Mgmt    Delivery & Collection     Water Supply Mgmt
-Revenue Mgmt       Revenue Mgmt              Revenue Mgmt
-Supplier Mgmt      Partner & Supplier Mgmt   Supplier & Partner Mgmt
-Enterprise Mgmt    Enterprise Mgmt           Enterprise Mgmt
+Asset Management
+├── Asset Strategy Management
+├── Asset Lifecycle Management
+├── Asset Performance Management
+└── Asset Information Management
 ```
 
-The names are not intended to align one-for-one. The comparison tests **scale**, not taxonomy reuse.
-
-## L2 test
-
-Good L2 candidates answer:
-
-> What narrower enduring abilities make this L1 capability possible?
-
-They should not answer:
-
-> What steps do people perform today?
-
-For example:
+Bad:
 
 ```text
-Network & Asset Management
-├── Asset Planning
-├── Asset Maintenance Management
+Asset Management
+├── Asset Strategy Management
+├── Replace Pump
+├── SAP EAM
+└── Western Sydney Team
+```
+
+The bad version mixes capability, task, application and organisation.
+
+## Vertical test
+
+Each child must be a narrower enduring ability of its parent.
+
+Good:
+
+```text
+Asset Lifecycle Management
+├── Asset Acquisition Management
+├── Asset Maintenance Strategy Management
 ├── Asset Renewal Management
-└── Asset Performance Management
+└── Asset Disposal Management
 ```
 
-is at a different semantic level from:
+Bad:
 
 ```text
-Network & Asset Management
-├── Inspect Pump
-├── Raise Work Order
-├── Approve Contractor
-└── Close Job
+Asset Lifecycle Management
+└── Customer Billing Management
 ```
 
-The second structure is a process/task decomposition and belongs in a different model.
+## L3 stopping test
 
-## When to move a candidate between levels
+A candidate L3 is useful when the distinction is likely to change one or more of:
 
-Move a capability when comparison with siblings exposes a material scale mismatch.
+- accountability;
+- application/system support;
+- information concepts;
+- controls/regulation;
+- risk;
+- supplier dependency;
+- investment/change;
+- performance measures.
 
-Examples:
+If none change, the L3 split may be taxonomy for its own sake.
 
-- `Customer Management` beside `Send Invoice` -> move/recast `Send Invoice` beneath Revenue Management or process modelling;
-- `Enterprise Management` beside `Parcel Locker Management` -> map the locker as implementation and remove it from the capability hierarchy;
-- `Water Supply Management` beside `Reservoir Inspection` -> treat inspection as process/maintenance activity, not L1/L2 capability.
+## Capability/process boundary
 
-## Conclusion
+If the next decomposition naturally becomes a sequence of actions—`receive`, `validate`, `approve`, `route`, `send`, `inspect`, `reconcile`—the model is probably crossing into process/activity detail.
 
-Granularity is not proved by box count. It is established by the semantic scale of siblings, explicit definitions and resistance to implementation leakage.
+Do not create L4 merely to keep decomposing.
+
+## Organisation-size caveat
+
+Northstar is intentionally small. A complete L3 model would add little operating value, so L3 is demonstrated selectively.
+
+Australia Post and Sydney Water are examples of organisational scale and complexity where a real internal enterprise capability model would normally be expected to reach L3 broadly. Public material, however, cannot support authoritative internal detail across every branch, so the examples show responsible L3 inference where evidence is strongest and retain explicit gaps elsewhere.

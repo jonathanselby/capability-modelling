@@ -6,17 +6,40 @@ A business capability model should describe **what an organisation must be able 
 
 That sounds simple. In practice, capability maps frequently become disguised org charts, application inventories, process diagrams or transformation plans.
 
-This repository contains a lightweight method, quality tests, worked examples and an AI-assisted modelling skill for keeping capability models useful.
+This repository contains a lightweight method, quality tests, worked examples, visual modelling guidance and an AI-assisted modelling skill for keeping capability models useful.
 
 ## The core test
 
 A capability should survive reasonable change around it.
 
-Ask:
-
 > **If the organisation restructures, changes software, redesigns the process or ends a transformation programme, should this capability still exist?**
 
 If the answer is no, the model is probably describing implementation rather than an enduring business ability.
+
+## Enterprise depth
+
+For a large or complex enterprise, this method treats **three capability levels as the robust default**:
+
+```text
+LANDSCAPE GROUPING       visual/navigation only
+└── L1 capability        broad enterprise ability
+    └── L2 capability    major enduring decomposition
+        └── L3 capability elemental enduring ability
+```
+
+This is consistent with mature reference-model practice. BIAN deliberately reduced its Business Capability Model to three levels and decomposed most areas to L3; APQC demonstrates disciplined multi-level decomposition for processes; ArchiMate separates capability from process, organisation, application and technology views.
+
+See [`BENCHMARKS.md`](BENCHMARKS.md).
+
+### But depth must earn its cost
+
+**Large / complex enterprise** — complete L1–L3 is normally justified because L3 often exposes materially different ownership, systems, controls, information, investment, suppliers, risk and performance.
+
+**Medium organisation** — complete L1–L2, then use L3 where complexity or the decision requires it.
+
+**Small / simple organisation** — L1–L2 are usually sufficient. There is little value maintaining enterprise-wide L3 detail if the lower-level distinctions do not change a decision.
+
+> **Decompose only while the next level reveals a distinction that matters.**
 
 ## What a capability is
 
@@ -47,9 +70,40 @@ A proposed capability is suspect when it is primarily:
 - a workflow step;
 - a temporary transformation activity.
 
-Other warning signs include capabilities that are so broad they mean almost nothing, sibling capabilities at materially different semantic scales, and definitions that simply repeat the capability name.
-
 See [`anti-patterns/README.md`](anti-patterns/README.md).
+
+## Visual modelling
+
+A serious capability model should be readable as a model, not merely as a list.
+
+This repository uses ASCII nested boxes and hierarchy diagrams so the hierarchy remains visible without requiring proprietary tooling.
+
+Example:
+
+```text
++-----------------------------------------------------------------------+
+| CUSTOMER & MARKET                                                     |
+|                                                                       |
+|  +---------------------------+                                        |
+|  | L1 Customer Management    |                                        |
+|  |                           |                                        |
+|  | +-----------------------+ |                                        |
+|  | | L2 Relationship Mgmt  | |                                        |
+|  | |                       | |                                        |
+|  | | +-------------------+ | |                                        |
+|  | | | L3 Preference Mgmt| | |                                        |
+|  | | +-------------------+ | |                                        |
+|  | +-----------------------+ |                                        |
+|  +---------------------------+                                        |
++-----------------------------------------------------------------------+
+```
+
+For large models, use two complementary views:
+
+1. **enterprise landscape** — groupings, all L1 and L2 capabilities;
+2. **domain detail maps** — each L1 expanded through L2 to L3.
+
+See [`VISUAL-MODELLING.md`](VISUAL-MODELLING.md).
 
 ## The method
 
@@ -60,13 +114,10 @@ BUSINESS PURPOSE / OUTCOMES
  ENDURING ABILITIES
            |
            v
-  CAPABILITY MODEL
+  L1 -> L2 -> L3 MODEL
            |
            v
-QUALITY + ANTI-PATTERN TESTS
-           |
-           v
-GRANULARITY CROSS-CHECK
+QUALITY + GRANULARITY TESTS
            |
            v
    REVISE / ACCEPT
@@ -75,41 +126,62 @@ GRANULARITY CROSS-CHECK
 MAP ORG / PROCESS / SYSTEM / DATA LATER
 ```
 
-The order matters. Starting from the current org chart or application estate usually bakes today's implementation into the model.
-
 See [`METHOD.md`](METHOD.md).
-
-## Granularity
-
-Granularity is semantic, not a box-count target.
-
-For the worked examples:
-
-- **L1** means an enterprise-scale enduring ability;
-- **L2** means a narrower enduring ability that decomposes one L1;
-- workflow steps, tasks, screens, teams, systems, facilities and projects stay outside the capability hierarchy.
-
-The example set deliberately holds L1 models to roughly 8–12 capabilities and selected L2 decompositions to 3–5 siblings so the examples can be compared at the same scale. **Those numbers are not a modelling rule.**
-
-See [`examples/granularity-cross-check.md`](examples/granularity-cross-check.md).
 
 ## Quality tests
 
-A proposed capability should pass six questions:
+A proposed capability should be:
 
-1. **Enduring** — should it still exist after normal organisational or technology change?
-2. **Implementation-independent** — can teams, systems and processes change without renaming it?
-3. **Business-meaningful** — does it describe an ability the organisation actually needs?
-4. **Clear boundary** — can a reader tell what belongs inside and outside it?
-5. **Comparable granularity** — is it at roughly the same semantic scale as its siblings?
-6. **Useful definition** — does the definition explain the ability rather than restating the name?
+1. **Enduring** — it survives normal organisational and technology change.
+2. **Implementation-independent** — teams, systems and processes can change without renaming it.
+3. **Business-meaningful** — it describes an ability the organisation genuinely needs.
+4. **Clearly bounded** — reviewers can distinguish what is inside and outside it.
+5. **Correctly levelled** — siblings operate at comparable semantic scale.
+6. **Usefully defined** — the definition adds meaning beyond the name.
+7. **Worth decomposing** — L3 exists because the distinction changes a decision, not because the diagram looks neater.
 
-The full checklist is in [`checklists/capability-quality.md`](checklists/capability-quality.md).
+See [`checklists/capability-quality.md`](checklists/capability-quality.md).
+
+## Worked examples
+
+The example standard mirrors the evidence discipline used in [`codebase-to-edd`](https://github.com/jonathanselby/codebase-to-edd): show the source basis, plausible bad interpretation, correction logic, definitions and unresolved uncertainty.
+
+Current examples:
+
+- **Northstar Equipment Hire** — fictional; demonstrates a small organisation where L3 should be selective rather than universal.
+- **Australia Post** — public-source example of a large national logistics/service enterprise.
+- **Sydney Water** — public-source example of a large, regulated, asset-intensive utility.
+
+Each uses the same package:
+
+```text
+README
+EVIDENCE
+BAD FIRST DRAFT
+CORRECTED MODEL
+CAPABILITY DEFINITIONS
+REVIEW
+LANDSCAPE
+```
+
+See [`examples/README.md`](examples/README.md) and [`examples/granularity-cross-check.md`](examples/granularity-cross-check.md).
+
+### Evidence caveat
+
+The method can support a complete enterprise L1–L3 model. A public-source example cannot responsibly pretend to know internal capability boundaries, ownership or lower-level detail that public material does not expose.
+
+Therefore:
+
+> **Worked examples decompose to L3 where the evidence supports the distinction and record gaps where it does not. They are architectural inference, not official capability models.**
+
+This is deliberate. Completeness is not permission to invent.
 
 ## Capability definition template
 
 ```text
+Identifier
 Name
+Level
 Definition
 Business outcome / purpose
 Scope included
@@ -118,73 +190,36 @@ Parent capability
 Child capabilities
 Key information concepts
 Relevant measures
-Notes / uncertainty
+Evidence / uncertainty
 ```
-
-The template deliberately does **not** require owner, team, application, process or vendor. Those are mapping dimensions, not capability identity.
 
 See [`templates/capability-definition.md`](templates/capability-definition.md).
 
-## Worked examples
-
-V0.2 uses the same evidence principle as [`codebase-to-edd`](https://github.com/jonathanselby/codebase-to-edd): do not publish only the polished answer; make the evidence basis, rejected interpretations, uncertainty and review recoverable.
-
-Three examples are included:
-
-| Example | Evidence basis | Purpose |
-|---|---|---|
-| [`Northstar Equipment Hire`](examples/fictional-company/) | fictional source brief | show the method without external evidence dependencies |
-| [`Australia Post`](examples/australia-post/) | dated official public sources | large national logistics, retail-access and service network |
-| [`Sydney Water`](examples/sydney-water/) | dated official public sources | regulated infrastructure utility |
-
-Every worked example contains:
-
-```text
-README
-  -> evidence
-  -> bad first draft
-  -> corrected model
-  -> scoped capability definitions
-  -> review
-```
-
-The public-source models are architectural inference, **not official capability models** of those organisations.
-
-See [`examples/README.md`](examples/README.md).
-
 ## AI-assisted modelling
 
-[`SKILL.md`](SKILL.md) defines a constrained AI workflow for proposing a capability model from supplied business evidence.
-
-The important boundary is:
+[`SKILL.md`](SKILL.md) defines a constrained workflow for proposing a three-level model.
 
 > **The model proposes. The architect accepts, rejects, combines, splits and renames.**
 
-The skill requires the model to expose evidence, assumptions, anti-pattern leakage, granularity problems, missing evidence and boundary questions before anything is accepted.
-
-## Tests
-
-[`tests/quality-cases.md`](tests/quality-cases.md) contains semantic pass/fail/ambiguous cases.
-
-The tests are not automated because terminology alone cannot establish business meaning. A label such as `Customer Account Management` may be a sound capability, a team name or a process label depending on context.
+For large-enterprise scope, the skill must not stop at L2 simply because L3 is harder. It must either propose responsible L3 decomposition or identify where evidence is insufficient.
 
 ## What comes after the capability model
 
-A capability model becomes more useful when other views are mapped **to it** rather than embedded **inside it**.
+A capability becomes more useful when implementation views are mapped **to it** rather than embedded **inside it**.
 
 ```text
 CAPABILITY
-   +--> business owner / organisational units
-   +--> processes
-   +--> applications
-   +--> data / information concepts
+   +--> organisation / ownership
+   +--> process / value stream
+   +--> applications / technology
+   +--> information / data
    +--> risks / controls
    +--> suppliers
-   +--> investment / change initiatives
+   +--> investment / change
    +--> measures / maturity
 ```
 
-This separation lets the capability remain comparatively stable while the implementation around it changes.
+Below L3, switch viewpoint when the detail is better represented as process, activity, information, organisation, application or control—not L4 capability by default.
 
 ## What this is not
 
@@ -199,29 +234,7 @@ This repository is not:
 - a maturity-scoring framework;
 - a substitute for business subject-matter expertise.
 
-The aim is smaller: **make capability models structurally honest enough to be useful.**
-
-## Repository structure
-
-```text
-capability-modelling/
-├── README.md
-├── METHOD.md
-├── SKILL.md
-├── VERSION
-├── CHANGELOG.md
-├── LICENSE
-├── templates/
-├── checklists/
-├── anti-patterns/
-├── tests/
-└── examples/
-    ├── README.md
-    ├── granularity-cross-check.md
-    ├── fictional-company/
-    ├── australia-post/
-    └── sydney-water/
-```
+The aim is: **make capability models structurally honest, deep enough for the organisation, and useful for decisions.**
 
 ## Licence
 

@@ -2,103 +2,161 @@
 
 Starting from Northstar Equipment Hire's purpose and responsibilities rather than its current structure produces a more stable model.
 
-## Level 1
+Northstar is deliberately small enough that **full L3 across the entire enterprise would not normally be necessary in practice**. This example nevertheless expands selected branches to L3 to demonstrate how the method scales.
+
+## Landscape groupings
 
 ```text
-Customer Management
-Fleet Management
-Equipment Availability Management
-Rental Agreement Management
-Fulfilment Management
-Maintenance Management
-Revenue Management
-Supplier Management
-Workforce Management
-Enterprise Management
+CUSTOMER & COMMERCIAL
+OPERATIONS & ASSETS
+ENTERPRISE SUPPORT
 ```
 
-These are illustrative, not authoritative.
+## Enterprise landscape — L1 / L2
 
-## Why this is stronger
+```text
++-----------------------------------------------------------------------+
+| CUSTOMER & COMMERCIAL                                                 |
+|                                                                       |
+|  Customer Management                                                  |
+|   ├─ Customer Acquisition Management                                  |
+|   ├─ Customer Relationship Management                                 |
+|   └─ Customer Service Management                                      |
+|                                                                       |
+|  Rental Agreement Management                                          |
+|   ├─ Rental Quotation Management                                      |
+|   ├─ Rental Contract Management                                       |
+|   ├─ Rental Extension Management                                      |
+|   └─ Rental Closure Management                                        |
+|                                                                       |
+|  Revenue Management                                                   |
+|   ├─ Pricing Management                                               |
+|   ├─ Billing Management                                               |
+|   ├─ Payment Management                                               |
+|   └─ Revenue Assurance                                                |
++-----------------------------------------------------------------------+
+| OPERATIONS & ASSETS                                                   |
+|                                                                       |
+|  Fleet Management                                                     |
+|   ├─ Fleet Planning                                                   |
+|   ├─ Fleet Acquisition                                                |
+|   ├─ Fleet Disposition                                                |
+|   └─ Fleet Performance Management                                     |
+|                                                                       |
+|  Equipment Availability Management                                    |
+|   ├─ Availability Determination                                       |
+|   ├─ Capacity Reservation                                             |
+|   ├─ Commitment Management                                            |
+|   └─ Availability Exception Management                                |
+|                                                                       |
+|  Fulfilment Management                                                |
+|   ├─ Collection Management                                            |
+|   ├─ Delivery Management                                              |
+|   ├─ Return Management                                                |
+|   └─ Fulfilment Exception Management                                  |
+|                                                                       |
+|  Maintenance Management                                               |
+|   ├─ Maintenance Planning                                             |
+|   ├─ Maintenance Execution                                            |
+|   ├─ Serviceability Management                                        |
+|   └─ Maintenance Parts Management                                     |
++-----------------------------------------------------------------------+
+| ENTERPRISE SUPPORT                                                    |
+|                                                                       |
+|  Supplier Management                                                  |
+|   ├─ Supplier Selection                                               |
+|   ├─ Supplier Contract Management                                     |
+|   └─ Supplier Performance Management                                  |
+|                                                                       |
+|  Workforce Management                                                 |
+|   ├─ Workforce Planning                                               |
+|   ├─ Workforce Administration                                         |
+|   └─ Workforce Capability Management                                  |
+|                                                                       |
+|  Enterprise Management                                                |
+|   ├─ Strategy Management                                              |
+|   ├─ Risk & Compliance Management                                     |
+|   ├─ Financial Management                                             |
+|   └─ Technology Management                                            |
++-----------------------------------------------------------------------+
+```
 
-### `Sydney Sales` -> `Customer Management`
+## Detailed hierarchy — selected L3
 
-The location and team structure disappear. Customer acquisition, relationship and account needs remain even if sales is reorganised or moved.
+### Maintenance Management
 
-### `Online Booking Portal` -> mapped later
+```text
+Maintenance Management
+├── Maintenance Planning
+│   ├── Preventive Maintenance Planning
+│   ├── Corrective Maintenance Planning
+│   └── Maintenance Scheduling
+├── Maintenance Execution
+│   ├── Work Order Management
+│   ├── Maintenance Work Coordination
+│   └── Maintenance Completion Management
+├── Serviceability Management
+│   ├── Serviceability Assessment
+│   ├── Defect Management
+│   └── Return-to-Service Management
+└── Maintenance Parts Management
+    ├── Parts Demand Management
+    ├── Parts Availability Management
+    └── Parts Consumption Management
+```
 
-The portal is not renamed into a capability. It would map to one or more capabilities such as Customer Management, Equipment Availability Management and Rental Agreement Management.
+### Rental Agreement Management
 
-### `Fleet Operations Team` -> `Fleet Management`
+```text
+Rental Agreement Management
+├── Rental Quotation Management
+│   ├── Quote Preparation
+│   ├── Quote Approval Management
+│   └── Quote Validity Management
+├── Rental Contract Management
+│   ├── Contract Establishment
+│   ├── Contract Terms Management
+│   └── Contract Variation Management
+├── Rental Extension Management
+│   ├── Extension Eligibility Management
+│   ├── Extension Pricing Management
+│   └── Extension Confirmation Management
+└── Rental Closure Management
+    ├── Return Condition Assessment
+    ├── Closure Charge Management
+    └── Contract Completion Management
+```
 
-The enduring ability survives team restructuring.
-
-### `Workshop` -> `Maintenance Management`
-
-The physical workshop is one implementation location. The enduring need is to maintain equipment in serviceable condition.
-
-### `Invoice Processing` -> `Revenue Management`
-
-Invoice processing is one process within the broader ability to calculate, collect and account for revenue.
-
-### `Digital Transformation` -> mapped as change
-
-The programme changes capabilities but is not a capability itself.
-
-### `Microsoft 365` -> mapped as technology
-
-A product can enable Workforce Management or Enterprise Management without defining either capability.
-
-### `Equipment Delivery` -> `Fulfilment Management`
-
-Delivery is part of fulfilling a rental commitment. A different operating model could use customer collection without removing the need for fulfilment.
-
-### `Supplier Contracts` -> `Supplier Management`
-
-Contracts are important artefacts within the broader ability to establish and govern supplier relationships.
-
-### `ERP Replacement` -> mapped as change
-
-The programme should map to the capabilities it affects, not sit inside the capability hierarchy.
-
-## Example second level
-
-A selected decomposition might be:
+### Fleet Management
 
 ```text
 Fleet Management
 ├── Fleet Planning
+│   ├── Fleet Demand Planning
+│   ├── Fleet Mix Planning
+│   └── Fleet Capacity Planning
 ├── Fleet Acquisition
+│   ├── Acquisition Requirement Management
+│   ├── Acquisition Evaluation
+│   └── Fleet Onboarding Management
 ├── Fleet Disposition
+│   ├── Disposal Candidate Management
+│   ├── Disposal Channel Management
+│   └── Fleet Retirement Management
 └── Fleet Performance Management
-
-Maintenance Management
-├── Maintenance Planning
-├── Maintenance Execution
-├── Serviceability Management
-└── Maintenance Parts Management
-
-Rental Agreement Management
-├── Rental Quotation Management
-├── Rental Contract Management
-├── Rental Extension Management
-└── Rental Closure Management
+    ├── Utilisation Management
+    ├── Lifecycle Cost Management
+    └── Fleet Reliability Management
 ```
 
-This decomposition should be driven by useful distinctions, not by a target number of boxes.
+The L3 labels remain abilities. If decomposition continued into steps such as `inspect machine`, `send quote` or `approve invoice`, that would be process/activity modelling rather than capability modelling.
 
-## Separate mappings
+## Why this is stronger
 
-Once the capability model is stable, Northstar can map today's implementation around it:
+- `Sydney Sales` becomes evidence for `Customer Management`, not a capability.
+- `Online Booking Portal` is mapped to capabilities later.
+- `Workshop` becomes an implementation location supporting `Maintenance Management`.
+- `Invoice Processing` sits below broader `Revenue Management` and would normally be represented in process detail.
+- `Digital Transformation` and `ERP Replacement` remain change initiatives mapped to affected capabilities.
 
-```text
-Maintenance Management
-    +--> Fleet Operations Team
-    +--> Sydney Workshop
-    +--> maintenance module in ERP
-    +--> maintenance processes
-    +--> parts suppliers
-    +--> ERP Replacement programme
-```
-
-The capability remains stable while these mappings can change independently.
+The model is illustrative, not an industry reference taxonomy.

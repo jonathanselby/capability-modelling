@@ -12,99 +12,217 @@ Do not start with the org chart, application inventory or current process catalo
 
 Ask what the organisation must be able to do for those outcomes to remain possible.
 
-Phrase candidates as business abilities. The naming convention matters less than the semantic test: the label should describe an enduring ability rather than today's implementation.
+A capability is an enduring organisational ability required to produce a business outcome or fulfil a business responsibility.
 
-## 3. Establish modelling levels before filling them
+It describes **what must be possible**, not who performs it or how it is implemented.
 
-For this method:
+## 3. Build the hierarchy deliberately
 
-- **L1** = enterprise-scale enduring abilities covering major business responsibilities;
-- **L2** = narrower enduring abilities that decompose one L1;
-- **process/task detail** = activities performed to realise a capability and therefore modelled separately.
+This method uses three capability levels.
 
-A model containing `Customer Management`, `Send Renewal Email` and `Enterprise Operations` at one level is not merely untidy; it mixes semantic scales.
+### Landscape grouping — not a capability level
 
-Do not use a fixed box count as the definition of granularity. Compare what each sibling means.
+A visual grouping makes a large model readable. Examples might be `Customer & Market`, `Operations`, `Assets` or `Enterprise Support`.
 
-## 4. Define boundaries
+A grouping is navigation. Do not count it as L0 and do not score or map it as if it were an executable business ability.
 
-For each candidate, write a short definition plus what is explicitly inside and outside scope.
+### Level 1 — broad enterprise capability
 
-If two candidates cannot be distinguished without naming teams or systems, the capability boundaries are probably not yet clear.
+L1 represents a major enduring ability of the enterprise.
 
-## 5. Test for implementation leakage
+It should be broad enough to remain stable across major organisational and technology change, but specific enough to have a clear business meaning.
+
+Examples:
+
+- Customer Management
+- Asset Management
+- Revenue Management
+- Risk Management
+
+### Level 2 — major enduring decomposition
+
+L2 decomposes one L1 capability into distinct enduring abilities.
+
+L2 siblings should collectively explain the meaningful scope of their parent without becoming process steps.
+
+Example:
+
+```text
+Asset Management
+├── Asset Strategy Management
+├── Asset Lifecycle Management
+├── Asset Performance Management
+└── Asset Information Management
+```
+
+### Level 3 — elemental business ability
+
+L3 is the lowest capability layer used by default in this method.
+
+It exists to expose distinctions that matter to ownership, systems, controls, information, investment, risk or performance.
+
+Example:
+
+```text
+Asset Lifecycle Management
+├── Asset Acquisition Management
+├── Asset Maintenance Strategy Management
+├── Asset Renewal Management
+└── Asset Disposal Management
+```
+
+L3 is still a capability. It is **not** an activity, task or workflow step.
+
+## 4. Depth policy
+
+### Large or complex enterprise
+
+A complete L1–L3 model is the normal target.
+
+Large enterprises need L3 because L2 often still hides materially different:
+
+- ownership;
+- applications and technology;
+- data/information concepts;
+- regulatory controls;
+- suppliers;
+- investment/change portfolios;
+- risk and performance characteristics.
+
+A model that stops at L2 can look complete while remaining too coarse to support portfolio, operating-model or transformation decisions.
+
+### Medium organisation
+
+Complete L1 and L2 first. Decompose to L3 where the decision requires it or where complexity, regulation or asset intensity makes the distinction material.
+
+### Small or simple organisation
+
+L1 and L2 are usually enough. There is little value in maintaining an enterprise-wide L3 taxonomy if the lower-level distinctions do not change ownership, controls, systems, investment or decisions.
+
+**The stopping rule:** decompose only while the next level reveals a distinction that matters.
+
+## 5. Define boundaries at every level
+
+For each material capability, record:
+
+- name;
+- definition;
+- business outcome / purpose;
+- scope included;
+- scope excluded;
+- parent;
+- children where applicable;
+- key information concepts;
+- relevant measures;
+- evidence / uncertainty where the model is inferred.
+
+If two sibling capabilities cannot be distinguished without naming teams or systems, the boundaries are probably not yet clear.
+
+## 6. Apply the MECE test pragmatically
+
+The children of a capability should aim to be:
+
+- **mutually distinguishable** — avoid deliberate overlap;
+- **collectively sufficient** — explain the parent well enough for the model's purpose.
+
+Do not force false mathematical purity. Real enterprises contain cross-cutting concerns. Record boundary decisions rather than hiding them.
+
+## 7. Test for implementation leakage
 
 Challenge every candidate:
 
-- Is this a team?
+- Is this a team or business unit?
 - Is this an application or platform?
 - Is this a vendor/product?
 - Is this a location?
 - Is this a workflow step?
 - Is this a programme or temporary initiative?
-- Is this merely an asset/facility class?
+- Is this only a business object with no ability attached?
 
-If yes, identify the enduring ability underneath it or map the item separately later.
+If yes, identify the enduring ability underneath it or move the item to the appropriate mapping view.
 
-## 6. Test sibling granularity
+## 8. Test granularity horizontally and vertically
 
-For every group of siblings ask:
+### Horizontal test
 
-> Do these labels describe enduring abilities at a comparable business scale?
+Sibling capabilities should operate at comparable semantic scale.
 
-Use three checks:
+Bad:
 
-1. **Substitution test** — would one sibling reasonably contain another? If yes, levels may be mixed.
-2. **Task test** — can a sibling be completed in one workflow step or work instruction? If yes, it is probably process detail.
-3. **Implementation test** — is a sibling mainly a system, asset, team, channel or site? If yes, remove it from capability identity.
+```text
+Customer Management
+Send Renewal Email
+Enterprise Operations
+```
 
-Fix mismatches by `COMBINE`, `SPLIT`, `MOVE LEVEL`, `REVISE` or `REMOVE`.
+### Vertical test
 
-## 7. Test stability under change
+Each child should be a genuine decomposition of its parent.
+
+Bad:
+
+```text
+Customer Management
+└── Finance Management
+```
+
+### L3 stopping test
+
+If the next decomposition naturally becomes verbs such as `validate`, `approve`, `send`, `receive`, `route`, `inspect` or `reconcile`, you may be crossing into process/activity modelling.
+
+## 9. Test stability under change
 
 Run four thought experiments:
 
 1. the organisation restructures;
-2. the major applications are replaced;
-3. the process is redesigned;
-4. the current transformation programme ends.
+2. major applications are replaced;
+3. processes are redesigned;
+4. current transformation programmes end.
 
 The capability should still make sense.
 
-## 8. Review completeness without chasing symmetry
-
-Ask whether the model covers the major abilities required to deliver the organisation's purpose and obligations.
-
-Do not invent capabilities to fill visual gaps or force every L1 to have the same number of children.
-
-Record uncertainty and missing evidence.
-
-## 9. Cross-check against another domain or model where useful
-
-A model can look internally tidy while operating at the wrong scale.
-
-When building a reusable method or reference example, compare it with another model:
-
-- are L1s enterprise abilities in both?
-- are L2s true decompositions rather than tasks?
-- are systems/teams/assets kept out consistently?
-- is one model dramatically more detailed without an evidence reason?
-
-This is a scale check, not a demand for identical taxonomies.
-
 ## 10. Map implementation separately
 
-Only after the capability model is reasonably stable should teams, systems, processes, vendors, data, controls and change initiatives be mapped to it.
+Only after the capability model is stable should implementation views be mapped to it.
 
-This creates a stable business view with changeable implementation views around it.
+```text
+CAPABILITY
+   +--> organisation / owner
+   +--> processes / value streams
+   +--> applications / technology
+   +--> information / data
+   +--> risks / controls
+   +--> suppliers
+   +--> investment / initiatives
+   +--> measures / maturity
+```
 
-## 11. Keep it useful
+This separation allows the capability hierarchy to remain comparatively stable while the operating model changes.
 
-A capability model is useful when it helps answer questions such as:
+## 11. Make the model visual
 
-- Where are multiple teams or systems supporting the same business ability?
+A serious capability model should have at least two views:
+
+1. **enterprise landscape** — landscape groupings plus all L1 and L2 capabilities;
+2. **domain detail** — each L1 expanded through L2 to L3.
+
+See [`VISUAL-MODELLING.md`](VISUAL-MODELLING.md).
+
+## 12. Review completeness without chasing symmetry
+
+Ask whether every major enterprise responsibility is represented and whether every L1 can be decomposed far enough for the intended decisions.
+
+Do not invent capabilities merely to make each branch have the same number of children.
+
+## 13. Keep it useful
+
+A capability model earns its cost when it helps answer questions such as:
+
+- Where are multiple systems supporting the same business ability?
 - Which capabilities carry the most investment, risk or change?
 - Which capabilities are weak, fragmented or strategically important?
-- Where does an initiative affect business ability rather than merely a system?
+- Which capabilities have unclear ownership?
+- Where do controls, data or suppliers create concentration risk?
+- Which transformation initiatives affect the same underlying business ability?
 
-If the model cannot support decisions, refining the taxonomy is not the highest-value next step.
+If deeper decomposition does not improve a decision, stop.

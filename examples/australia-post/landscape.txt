@@ -1,0 +1,21 @@
++--------------------------------------------------------------------------------+
+| AUSTRALIA POST — INFERRED CAPABILITY LANDSCAPE                                 |
++--------------------------------------------------------------------------------+
+| CUSTOMER & MARKET                                                              |
+| [Customer Management]                         [Channel Management]               |
+|  Acquisition | Relationship | Service | Insight  Retail | Digital | Business    |
++--------------------------------------------------------------------------------+
+| PRODUCT & COMMERCIAL                                                           |
+| [Product & Service Management]                [Commercial Management]           |
+|  Parcels | Letters | Retail | International      Pricing | Contract | Revenue   |
++--------------------------------------------------------------------------------+
+| NETWORK & FULFILMENT                                                           |
+| [Network Mgmt] [Consignment Mgmt] [Transport Mgmt] [Delivery Mgmt]             |
+| Planning       Lodgement          Planning         Planning                     |
+| Capacity       Identification     Linehaul         Execution                    |
+| Operations     Status             Local Transport  Exceptions                   |
+| Performance    Commitments        Exceptions       Confirmation                 |
++--------------------------------------------------------------------------------+
+| ENTERPRISE ENABLEMENT                                                          |
+| [Workforce Mgmt] [Supplier Mgmt] [Asset Mgmt] [Risk & Compliance Mgmt]         |
++--------------------------------------------------------------------------------+

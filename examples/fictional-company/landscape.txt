@@ -1,0 +1,30 @@
++--------------------------------------------------------------------------------+
+| NORTHSTAR EQUIPMENT HIRE — CAPABILITY LANDSCAPE                                |
++--------------------------------------------------------------------------------+
+| CUSTOMER & COMMERCIAL                                                          |
+|                                                                                |
+| [Customer Management] [Rental Agreement Management] [Revenue Management]       |
+|                                                                                |
+| Customer Acquisition    Rental Quotation         Pricing Management            |
+| Customer Relationship   Rental Contract          Billing Management            |
+| Customer Service        Rental Extension         Payment Management            |
+|                         Rental Closure           Revenue Assurance             |
++--------------------------------------------------------------------------------+
+| OPERATIONS & ASSETS                                                            |
+|                                                                                |
+| [Fleet Management] [Availability Mgmt] [Fulfilment Mgmt] [Maintenance Mgmt]    |
+|                                                                                |
+| Fleet Planning       Availability Determ.  Collection Mgmt   Maint. Planning   |
+| Fleet Acquisition    Capacity Reservation  Delivery Mgmt     Maint. Execution  |
+| Fleet Disposition    Commitment Mgmt       Return Mgmt       Serviceability    |
+| Fleet Performance    Exception Mgmt        Exception Mgmt    Parts Mgmt        |
++--------------------------------------------------------------------------------+
+| ENTERPRISE SUPPORT                                                             |
+|                                                                                |
+| [Supplier Management] [Workforce Management] [Enterprise Management]           |
+|                                                                                |
+| Supplier Selection      Workforce Planning       Strategy Management            |
+| Supplier Contracting    Workforce Admin          Risk & Compliance              |
+| Supplier Performance    Workforce Capability     Financial Management           |
+|                                                  Technology Management          |
++--------------------------------------------------------------------------------+

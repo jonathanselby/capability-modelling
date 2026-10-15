@@ -1,17 +1,26 @@
 # Changelog
 
+## 0.3.0
+
+Enterprise-depth modelling release.
+
+- benchmarked the method against BIAN, APQC and ArchiMate;
+- adopted three capability levels as the robust large-enterprise default;
+- separated landscape groupings from capability levels;
+- added explicit L1/L2/L3 definitions and decomposition rules;
+- added visual modelling guidance using nested-box maps;
+- extended all worked examples to Level 3;
+- added enterprise landscape and detailed capability-map artefacts;
+- documented when smaller organisations should deliberately stop at L2.
+
 ## 0.2.0
 
 Worked-example and granularity release.
 
-- standardised every worked example as evidence -> first draft -> corrected model -> definitions -> review;
-- added public-source Australia Post worked example;
-- added public-source Sydney Water worked example;
-- added explicit source/retrieval and inference boundaries for public examples;
-- added a cross-example granularity review;
-- formalised L1, L2 and process/task distinctions in the method and AI skill;
-- expanded the fictional Northstar example with evidence and review artefacts;
-- cross-referenced the worked-example evidence standard used by `codebase-to-edd`.
+- added a worked-example standard aligned to `codebase-to-edd`;
+- added public-source Australia Post and Sydney Water examples;
+- added evidence, first-draft, corrected-model, definition and review artefacts;
+- added explicit granularity cross-checks.
 
 ## 0.1.0
 

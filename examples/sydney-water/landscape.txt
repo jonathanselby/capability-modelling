@@ -1,0 +1,24 @@
++--------------------------------------------------------------------------------+
+| SYDNEY WATER — INFERRED CAPABILITY LANDSCAPE                                   |
++--------------------------------------------------------------------------------+
+| CUSTOMER & SERVICE                                                             |
+| [Customer Management]                     [Service Commitment Management]        |
+| Account | Service | Billing | Comms          Standards | Interruptions | Impact |
++--------------------------------------------------------------------------------+
+| WATER & RESOURCE OPERATIONS                                                    |
+| [Water Supply] [Wastewater] [Stormwater] [Resource & Environment]              |
+| Source          Collection   Network       Conservation                         |
+| Treatment       Treatment    Flow          Environmental Impact                 |
+| Distribution    Recycled     Quality       Resource Recovery                    |
+| Quality         Quality      Incidents     Catchment Interface                 |
++--------------------------------------------------------------------------------+
+| ASSETS & INFRASTRUCTURE                                                        |
+| [Asset Management] [Infrastructure Delivery] [Operational Resilience]          |
+| Strategy            Planning                  Continuity                         |
+| Lifecycle           Capital Delivery          Incident                           |
+| Performance         Commissioning             Emergency Response                |
+| Information         Assurance                 Recovery                           |
++--------------------------------------------------------------------------------+
+| ENTERPRISE & REGULATION                                                        |
+| [Regulatory & Compliance] [Risk] [Workforce] [Supplier] [Enterprise Mgmt]      |
++--------------------------------------------------------------------------------+

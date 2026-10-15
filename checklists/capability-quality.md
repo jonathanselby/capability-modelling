@@ -1,79 +1,59 @@
 # Capability Quality Checklist
 
-Use this as a review aid, not a scoring machine.
+Use this checklist during review. It is intentionally qualitative; a numeric score can create false confidence.
 
-## 1. Enduring
+## Model-level checks
 
-Would the capability still exist if:
+### Coverage
+- [ ] major enterprise responsibilities are represented;
+- [ ] landscape groupings are navigation only, not hidden capability levels;
+- [ ] every L1 has a meaningful L2 decomposition;
+- [ ] for a large/complex enterprise, every material L2 has either L3 decomposition or an explicit evidence/gap note;
+- [ ] the model has both enterprise landscape and domain-detail views.
 
-- the organisation restructured;
-- current systems were replaced;
-- current processes were redesigned;
-- current change programmes finished?
+### Granularity
+- [ ] L1 siblings are comparable enterprise-scale abilities;
+- [ ] L2 siblings decompose one L1 at comparable scale;
+- [ ] L3 siblings decompose one L2 at comparable scale;
+- [ ] no branch has silently crossed into activities/tasks while peers remain capabilities;
+- [ ] deeper decomposition is justified by a decision need, not symmetry.
 
-If not, it is probably implementation rather than capability.
+### Hierarchy
+- [ ] every child is semantically part of its parent;
+- [ ] sibling overlap is understood and minimised;
+- [ ] children collectively explain enough of the parent for the model's purpose;
+- [ ] stable identifiers are used for large models.
 
-## 2. Implementation-independent
+## Capability-level checks
 
-The capability should not depend on a specific:
+For every material capability ask:
 
-- team;
-- vendor;
-- product;
-- application;
-- location;
-- workflow;
-- programme.
+### Enduring
+Would the capability survive organisational restructuring, system replacement, process redesign and completion of today's programmes?
 
-## 3. Business-meaningful
+### Implementation-independent
+Does the capability avoid embedding team, application, platform, vendor, location or programme identity?
 
-Can a business reader explain why the organisation needs this ability?
+### Business-meaningful
+Does it describe an ability the organisation genuinely needs rather than a vague aspiration?
 
-If the label only makes sense to the technology or transformation team, challenge it.
+### Clear boundary
+Can a reviewer tell what is inside and outside scope?
 
-## 4. Clear boundary
+### Useful definition
+Does the definition explain the ability rather than repeat the name?
 
-Can a reader tell what is in and out of scope from the definition?
+### Correct level
+Is it broad enough for its level and narrower than its parent?
 
-Watch for overlapping capabilities whose boundaries differ only because different teams own them today.
+### L3 test
+If L3, does the distinction matter to accountability, systems, information, controls, risk, suppliers, investment or performance?
 
-## 5. Comparable granularity
+If not, consider removing the decomposition.
 
-Are sibling capabilities at roughly the same conceptual level?
+## Review actions
 
-Red flags:
-
-- one sibling is enterprise-wide while another is one task;
-- one is a broad domain while another is a workflow step;
-- parent and child capabilities appear as peers.
-
-## 6. Useful definition
-
-The definition should add meaning.
-
-Weak:
-
-> Supplier Management is the capability to manage suppliers.
-
-Better:
-
-> The ability to establish, govern and maintain supplier relationships so external goods and services meet business, commercial and operational requirements.
-
-## 7. Evidence-aware
-
-Is the capability supported by business evidence or subject-matter judgement?
-
-If it was inferred to make the map look complete, mark it as a candidate rather than presenting it as fact.
-
-## 8. Decision-useful
-
-Would this capability help analyse investment, risk, technology, organisation, change or performance?
-
-If not, ask whether the model is becoming taxonomy for taxonomy's sake.
-
-## Review result
-
-For each capability, record:
+Use:
 
 ```text
 ACCEPT
@@ -84,5 +64,3 @@ MOVE LEVEL
 REMOVE
 NEEDS EVIDENCE
 ```
-
-A model is ready to use when material defects are understood and bounded, not when every naming debate has been eliminated.

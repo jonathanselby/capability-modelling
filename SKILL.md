@@ -2,15 +2,15 @@
 
 ## Objective
 
-Propose a candidate business capability model from supplied organisational evidence while keeping capability identity separate from org structure, applications, processes, vendors, locations, assets/facilities and temporary change programmes.
+Propose a candidate three-level business capability model from supplied organisational evidence while keeping capability identity separate from org structure, applications, processes, vendors, locations and temporary change programmes.
 
 The output is a **candidate model for architectural review**, not an authoritative taxonomy.
 
 ## Evidence rule
 
-Use the supplied material as the basis for the model.
+Use supplied material as the evidence basis.
 
-Do not silently fill gaps with generic industry knowledge. When a capability is inferred rather than directly supported, label it as inferred or needs evidence.
+Do not silently fill gaps with generic industry knowledge. When a capability is inferred rather than directly supported, label it `inferred` or `needs evidence`.
 
 ## Core definition
 
@@ -18,32 +18,49 @@ A capability is an enduring organisational ability required to produce a busines
 
 It describes **what must be possible**, not who performs it or how it is currently implemented.
 
-## Modelling levels
+## Hierarchy
 
-Use levels semantically:
+Use:
 
-- **L1** — enterprise-scale enduring ability;
-- **L2** — narrower enduring ability that decomposes one L1;
-- **process/task** — activities/workflow detail; do not place these in the capability hierarchy.
+```text
+LANDSCAPE GROUPING       navigation only
+└── L1 capability        broad enterprise ability
+    └── L2 capability    major enduring decomposition
+        └── L3 capability elemental enduring ability
+```
 
-Do not infer that L1 must contain a fixed number of capabilities or every L1 must have the same number of L2s.
+Do not create L4 by default. Below L3, switch viewpoint when the material is better represented as process, task, information, organisation, application or control detail.
+
+## Depth rule
+
+### Large / complex enterprise
+
+Target a complete L1–L3 model unless the evidence is insufficient. If evidence is missing, show the gap rather than stopping silently.
+
+### Medium organisation
+
+Complete L1–L2 and propose L3 where complexity or the decision requires it.
+
+### Small / simple organisation
+
+Do not force enterprise-wide L3. Use it only where the distinction is materially useful.
 
 ## Workflow
 
 ### 1. Establish scope
 
-Identify from the supplied evidence:
+Identify:
 
 - organisation/business area in scope;
 - business purpose and outcomes;
 - products/services;
-- customer or stakeholder responsibilities;
-- regulatory/operating obligations where supplied;
+- customer/stakeholder responsibilities;
+- regulatory and operating obligations supplied;
 - material uncertainties.
 
 ### 2. Extract evidence without modelling yet
 
-Separate relevant evidence into:
+Separate evidence into:
 
 - outcomes/responsibilities;
 - business objects/information concepts;
@@ -52,31 +69,57 @@ Separate relevant evidence into:
 - vendors/products;
 - processes/activities;
 - locations;
-- assets/facilities;
 - programmes/change initiatives.
 
-Implementation categories may reveal underlying abilities but must not be copied into the capability model by default.
+Implementation-shaped nouns may reveal underlying capabilities but must not be copied by default.
 
-### 3. Propose L1 candidate capabilities
+### 3. Propose landscape groupings
 
-Derive enterprise-scale enduring abilities needed to deliver evidenced outcomes and responsibilities.
+Use a small number of visual/navigation groupings if they make the model easier to read.
 
-For each candidate provide:
+Do not treat groupings as capabilities.
 
+### 4. Propose L1 capabilities
+
+Derive broad enduring enterprise abilities required by the evidence.
+
+For each provide:
+
+- identifier;
 - name;
 - short definition;
 - evidence basis;
 - confidence: `supported`, `inferred`, or `needs evidence`.
 
-### 4. Add L2 only where it improves meaning
+### 5. Decompose every L1 to L2
 
-Decompose an L1 only into narrower enduring abilities.
+For each L1:
 
-Do not use process steps as L2s. Do not create L2 merely for visual symmetry.
+- identify distinct enduring child abilities;
+- test whether the children collectively explain the parent;
+- remove process steps, teams, systems and programmes;
+- check sibling granularity.
 
-### 5. Run anti-pattern review
+### 6. Decompose to L3
 
-Explicitly test every candidate for:
+For large/complex enterprise scope, decompose each material L2 to L3.
+
+An L3 is justified when it reveals a distinction likely to matter to one or more of:
+
+- accountability;
+- systems;
+- information;
+- regulation/control;
+- risk;
+- supplier dependency;
+- investment/change;
+- performance measurement.
+
+Do not create L3 solely for visual symmetry.
+
+### 7. Run anti-pattern review
+
+Test every candidate for:
 
 - team/org-chart leakage;
 - application/platform leakage;
@@ -84,43 +127,49 @@ Explicitly test every candidate for:
 - process-step leakage;
 - programme/change leakage;
 - location leakage;
-- asset/facility leakage;
 - outcome-as-capability;
 - object-without-ability;
 - excessive breadth;
 - inconsistent granularity;
 - tautological definition.
 
-### 6. Run sibling granularity review
+### 8. Run horizontal and vertical granularity review
 
-For each sibling set test:
+For each sibling set:
 
-- would one candidate naturally contain another?
-- is one candidate a single task while peers are broad abilities?
-- is one candidate primarily implementation rather than business ability?
-- is one candidate materially broader or narrower without evidence-based reason?
+- are the children peers in semantic scale?
+- does each child genuinely decompose the same parent?
+- has one branch drifted into task/process detail while another remains a capability?
 
-Use review actions: `ACCEPT`, `REVISE`, `COMBINE`, `SPLIT`, `MOVE LEVEL`, `REMOVE`, `NEEDS EVIDENCE`.
+### 9. Run stability tests
 
-### 7. Run stability tests
-
-For each material candidate ask whether it should survive:
+For every material L1/L2/L3 candidate ask whether it should survive:
 
 1. organisational restructuring;
 2. replacement of current systems;
 3. process redesign;
 4. completion of current programmes.
 
-Flag candidates that fail.
+Flag failures.
 
-### 8. Report uncertainty
+### 10. Produce visual views
+
+Produce:
+
+- an enterprise landscape showing groupings, L1 and L2;
+- detailed hierarchy views expanding every L1 through L2 to L3.
+
+ASCII nested boxes or tree diagrams are acceptable when diagram tooling is unavailable.
+
+### 11. Report uncertainty
 
 List:
 
-- capabilities that need business validation;
+- capabilities requiring business validation;
 - overlaps/boundary questions;
 - likely missing evidence;
-- candidates that were removed or renamed and why.
+- branches that could not be responsibly decomposed to L3;
+- candidates removed/renamed/re-levelled and why.
 
 ## Required output
 
@@ -129,21 +178,23 @@ List:
 
 ## Scope and evidence basis
 
+## Organisation complexity / depth decision
+
 ## Business purpose / outcomes
 
-## Proposed L1 capability hierarchy
+## Landscape groupings
 
-## Selected L2 decompositions
+## Enterprise landscape — L1/L2
+
+## Detailed hierarchy — L1/L2/L3
 
 ## Capability definitions
-| Capability | Definition | Evidence basis | Confidence |
+| ID | Level | Capability | Definition | Evidence basis | Confidence |
 
 ## Anti-pattern findings
 | Candidate | Finding | Action |
 
-## Granularity cross-check
-
-## Boundary issues
+## Granularity / boundary issues
 
 ## Assumptions and inferred capabilities
 
@@ -152,23 +203,36 @@ List:
 ## Review summary
 ```
 
+## Review actions
+
+Use:
+
+```text
+ACCEPT
+REVISE
+COMBINE
+SPLIT
+MOVE LEVEL
+REMOVE
+NEEDS EVIDENCE
+```
+
 ## Things not to do
 
 Do not:
 
 - present an AI-generated taxonomy as authoritative;
-- assume common industry capabilities are present without evidence;
-- copy team, system, site, product or asset names into the model merely because they appear frequently;
-- optimise for a fixed number of capability boxes;
-- force every business object into a `... Management` capability;
-- create symmetry by invention;
-- hide ambiguity behind confident wording;
-- use process steps as L2 capabilities;
-- score maturity unless explicitly asked and evidence exists;
-- map applications, teams or processes into capability identity.
+- stop at L2 for a large enterprise merely because L3 is harder;
+- invent L3 where evidence is absent;
+- force every branch to have the same number of children;
+- turn process activities into L3 capabilities;
+- assume common industry capabilities without evidence;
+- copy teams, products, systems or vendors into capability identity;
+- map applications, teams or processes into capability identity;
+- score maturity unless explicitly requested and evidence exists.
 
 ## Human acceptance boundary
 
-The architect or business reviewers decide whether to accept, reject, combine, split, rename or re-level proposed capabilities.
+The architect and business reviewers decide whether to accept, reject, combine, split, rename or re-level proposed capabilities.
 
 The model proposes and critiques. It does not own business truth.
