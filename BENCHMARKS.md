@@ -19,8 +19,8 @@ BIAN also stated that the model had been decomposed to Level 3 in most cases. La
 
 Sources:
 
-- BIAN Release 9.0 notes: https://bian.org/wp-content/uploads/2020/10/BIAN-v9.0-Release-Notes.pdf
-- BIAN Business Capability Model / Service Landscape alignment paper: https://bian.org/wp-content/uploads/2023/08/BIAN-BCM-Relationship-with-BIAN-Service-Landscape-Final.pdf
+- BIAN Release 9.0 notes: https://bian.org/deliverables/service-landscape/bian-service-landscape-9-0/
+- BIAN Business Capability Model / Service Landscape alignment paper: https://bian.org/bian-membership/working-groups/
 - current BIAN Service Landscape: https://bian.org/deliverables/service-landscape/
 
 ### Lesson for this repository
