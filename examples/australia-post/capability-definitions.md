@@ -2,43 +2,43 @@
 
 These definitions are architectural proposals derived from public evidence.
 
-## Item Acceptance Management
+## Consignment Management
 
 **Definition**  
-The ability to accept physical items into the postal/logistics service, establish the service commitment and prepare the item for network handling.
+The ability to govern an item or consignment from lodgement through identification, status visibility and delivery commitment.
 
 **Purpose**  
-Create a valid service entry point for items entering the network.
+Maintain a coherent service record and commitment for items moving through the postal and logistics network.
 
 **Included**
-- lodgement/acceptance;
-- service selection at acceptance;
-- acceptance condition checks;
-- initial item/service information capture.
+- lodgement management;
+- item identification management;
+- consignment status management;
+- delivery commitment management.
 
 **Excluded**
-- downstream transport;
-- final delivery;
+- physical transport execution;
+- final delivery execution;
 - general customer relationship management.
 
-## Transport Network Management
+## Network Management
 
 **Definition**  
-The ability to plan, operate and govern movement capacity across the network connecting acceptance, processing and delivery locations.
+The ability to plan, operate and govern the enterprise network through which postal and logistics flows are coordinated.
 
 **Purpose**  
-Move items through the network with sufficient capacity, reliability and efficiency to support service commitments.
+Provide the footprint, capacity, operating coordination and performance management needed to support service commitments.
 
 **Included**
 - network planning;
-- transport capacity management;
-- movement execution governance;
+- network capacity management;
+- network operations management;
 - network performance management.
 
 **Excluded**
-- last-mile delivery execution;
-- retail service-point operation;
-- fleet asset procurement as an enterprise procurement activity.
+- transport execution as a separate Transport Management capability;
+- final delivery execution;
+- asset procurement as an enterprise procurement activity.
 
 ## Retail Access Management
 
@@ -49,12 +49,12 @@ The ability to provide and govern physical or assisted access points through whi
 Maintain practical service access across communities while allowing the implementation mix to evolve.
 
 **Included**
-- access-network planning;
-- service-point management;
+- retail location portfolio management;
+- retail service availability management;
 - assisted-service access;
-- self-service physical access.
+- retail access performance management.
 
 **Excluded**
 - naming Post Offices or Parcel Lockers as capability identities;
-- digital channel engineering;
-- transport-network operation.
+- digital channel management;
+- transport or delivery operations.
